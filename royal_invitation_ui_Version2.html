@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Royal VVIP Black Card Invitation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Marcellus&family=Playfair+Display:wght@400;700&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      background: radial-gradient(ellipse at center, #1a1a2e 0%, #16213e 50%, #0f1419 100%);
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      font-family: 'Marcellus', serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow-x: hidden;
+    }
+    .bg-orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.1;
+      animation: float 8s ease-in-out infinite;
+      z-index: 1;
+    }
+    .bg-orb:nth-child(1) { width: 300px; height: 300px; background: #d4af37; top: 10%; left: 10%; animation-delay: 0s; }
+    .bg-orb:nth-child(2) { width: 200px; height: 200px; background: #e3be72; top: 60%; right: 15%; animation-delay: 2s; }
+    .bg-orb:nth-child(3) { width: 150px; height: 150px; background: #f8e8c8; bottom: 20%; left: 20%; animation-delay: 4s; }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+    .royal-container {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .royal-header {
+      text-align: center;
+      margin-bottom: 40px;
+      position: relative;
+    }
+    .royal-crown {
+      width: 80px;
+      height: 60px;
+      margin: 0 auto 20px;
+      position: relative;
+      animation: crownGlow 3s ease-in-out infinite;
+    }
+    @keyframes crownGlow {
+      0%, 100% { filter: drop-shadow(0 0 10px #d4af37); }
+      50% { filter: drop-shadow(0 0 25px #f8e8c8); }
+    }
+    .main-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.5em;
+      color: #d4af37;
+      margin: 0;
+      text-shadow: 0 0 20px #d4af37aa;
+      animation: titleShimmer 2s ease-in-out infinite;
+    }
+    @keyframes titleShimmer {
+      0%, 100% { text-shadow: 0 0 20px #d4af37aa; }
+      50% { text-shadow: 0 0 30px #f8e8c8cc, 0 0 40px #d4af37; }
+    }
+    .subtitle {
+      font-family: 'Cinzel', serif;
+      font-size: 1.2em;
+      color: #e3be72;
+      margin-top: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    .invitation-layout {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .invitation-outer {
+      perspective: 1600px;
+      flex: 0 0 auto;
+    }
+    .invitation-card {
+      width: 370px;
+      max-width: 95vw;
+      aspect-ratio: 2/3;
+      position: relative;
+      border-radius: 28px;
+      background: linear-gradient(135deg, #090a13 0%, #222033 100%);
+      box-shadow: 0 16px 40px #0008, 0 0 0 7px #C3A35577;
+      overflow: hidden;
+      animation: cardReveal 1.3s cubic-bezier(.74,-0.02,.36,1.13);
+      border: 4px solid transparent;
+      border-image: linear-gradient(120deg, #f8e8c8 5%, #d4af37 40%, #a87c2d 95%) 1;
+    }
+    @keyframes cardReveal {
+      from { transform: rotateY(-80deg) scale(0.5); opacity:0; }
+      to   { transform: none; opacity:1; }
+    }
+    .control-panel {
+      flex: 1;
+      min-width: 320px;
+      max-width: 500px;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 2px rgba(212,175,55,0.3);
+      border: 2px solid rgba(212,175,55,0.2);
+      position: relative;
+      overflow: hidden;
+    }
+    .control-panel::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #d4af37, transparent);
+      animation: topBorderGlow 2s ease-in-out infinite;
+    }
+    @keyframes topBorderGlow {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+    .panel-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.8em;
+      color: #d4af37;
+      text-align: center;
+      margin-bottom: 25px;
+      text-shadow: 0 0 10px #d4af37aa;
+      letter-spacing: 2px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .form-label {
+      display: block;
+      font-family: 'Cinzel', serif;
+      font-size: 0.9em;
+      color: #e3be72;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+    .form-input, .form-textarea {
+      width: 100%;
+      padding: 12px 16px;
+      background: linear-gradient(135deg, #0f1419 0%, #1a1a2e 100%);
+      border: 2px solid rgba(212,175,55,0.3);
+      border-radius: 10px;
+      color: #f8e8c8;
+      font-family: 'Marcellus', serif;
+      font-size: 1em;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .form-input:focus, .form-textarea:focus {
+      outline: none;
+      border-color: #d4af37;
+      box-shadow: 0 0 15px rgba(212,175,55,0.3);
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    }
+    .form-input::placeholder, .form-textarea::placeholder {
+      color: rgba(227,190,114,0.6);
+    }
+    .form-textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+    .form-row {
+      display: flex;
+      gap: 15px;
+    }
+    .form-row .form-group {
+      flex: 1;
+    }
+    .royal-buttons {
+      display: flex;
+      gap: 15px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+    .royal-btn {
+      flex: 1;
+      min-width: 120px;
+      padding: 15px 25px;
+      border: none;
+      border-radius: 12px;
+      font-family: 'Cinzel', serif;
+      font-size: 1em;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .royal-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s ease;
+    }
+    .royal-btn:hover::before {
+      left: 100%;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #d4af37 0%, #f8e8c8 50%, #d4af37 100%);
+      color: #1a1a2e;
+      box-shadow: 0 5px 20px rgba(212,175,55,0.4);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(212,175,55,0.6);
+    }
+    .btn-secondary {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      color: #d4af37;
+      border: 2px solid #d4af37;
+    }
+    .btn-secondary:hover {
+      background: linear-gradient(135deg, #d4af37 0%, #f8e8c8 100%);
+      color: #1a1a2e;
+      transform: translateY(-2px);
+    }
+    .progress-indicator {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .progress-text {
+      color: #e3be72;
+      font-family: 'Cinzel', serif;
+      font-size: 0.9em;
+      margin-bottom: 10px;
+    }
+    .progress-bar {
+      width: 100%;
+      height: 4px;
+      background: rgba(212,175,55,0.2);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #d4af37, #f8e8c8);
+      width: 0%;
+      transition: width 0.3s ease;
+      border-radius: 2px;
+    }
+    .foil-border {
+      position: absolute; inset: 0;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .black-badge {
+      position: absolute; top: 30px; right: 30px;
+      z-index: 3;
+      background: linear-gradient(90deg,#18181e 0,#2d2c36 100%);
+      color: #e3be72;
+      font-family: 'Playfair Display', serif;
+      font-size: 0.95em;
+      font-weight: 700;
+      letter-spacing: 2px;
+      padding: 7px 22px;
+      border-radius: 18px;
+      border: 2px solid #e3be72;
+      box-shadow: 0 3px 12px #0006, 0 1px 0 #fff3 inset;
+      text-shadow: 0 1px 8px #e3be72a9;
+      transform: rotate(7deg);
+      filter: drop-shadow(0 0 9px #e3be7260);
+      animation: shimmerBadge 2.7s infinite linear;
+    }
+    @keyframes shimmerBadge {
+      0%   { filter: drop-shadow(0 0 9px #e3be7260); }
+      50%  { filter: drop-shadow(0 0 24px #fff9e3c0); }
+      100% { filter: drop-shadow(0 0 9px #e3be7260); }
+    }
+    .crest-holder {
+      position: absolute; top: 36px; left: 36px; z-index: 5;
+      width: 60px; height: 60px;
+      display: flex; align-items: center; justify-content: center;
+      background: #22202b88;
+      border-radius: 50%;
+      border: 2px solid #e3be72;
+      box-shadow: 0 2px 7px #e3be7235;
+    }
+    .crest-holder .crest-initials {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.1em;
+      color: #e3be72;
+      letter-spacing: 1.2px;
+      text-shadow: 0 2px 8px #fff6, 0 0px 9px #e3be72a6;
+      user-select: none;
+    }
+    .card-content {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      z-index: 10;
+      padding: 120px 30px 36px 30px;
+      color: #fff;
+      text-align: center;
+    }
+    .card-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.1em;
+      font-weight: 700;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg,#f6e2b7 20%,#fffbe8 55%,#e3be72 85%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 2px 14px #e3be7260, 0 1px 0 #fff9;
+      letter-spacing: 2px;
+      animation: shimmerText 2.8s infinite linear;
+    }
+    @keyframes shimmerText {
+      0% { filter: brightness(1) drop-shadow(0 0 5px #fffbe8); }
+      50% { filter: brightness(1.13) drop-shadow(0 0 21px #e3be72); }
+      100% { filter: brightness(1) drop-shadow(0 0 5px #fffbe8); }
+    }
+    .recipient {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25em;
+      color: #e3be72;
+      margin-bottom: 2px;
+      letter-spacing: 1.1px;
+      font-weight: 700;
+      text-shadow: 0 1px 2px #fff5;
+    }
+    .message {
+      font-family: 'Marcellus', serif;
+      font-size: 1.09em;
+      color: #fffbe8;
+      margin: 19px 0 19px 0;
+      line-height: 1.62;
+      text-shadow: 0 1px 7px #e3be7246;
+    }
+    .event-info {
+      background: rgba(227,190,114,0.17);
+      border: 1.3px solid #e3be72aa;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px #e3be7241;
+      margin: 10px 0 24px 0;
+      padding: 13px 0;
+      font-size: 1em;
+      color: #fff9e3;
+      width: 100%;
+      max-width: 300px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .event-info div { margin-bottom: 6px; }
+    .event-info strong { color: #e3be72; }
+    .signature {
+      font-family: 'Great Vibes', cursive;
+      color: #e3be72;
+      font-size: 1.6em;
+      margin-top: 12px;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 6px #fff8,0 1px 0 #e3be72;
+    }
+    .qr-frame {
+      position: absolute; bottom: 22px; right: 24px; width: 60px; height: 60px;
+      background: #fff9e3ee;
+      border-radius: 13px;
+      border: 2px solid #e3be72;
+      box-shadow: 0 1px 7px #e3be7265;
+      display: flex; align-items: center; justify-content: center;
+      z-index: 20;
+    }
+    .qr-frame canvas { border-radius: 10px; }
+    .sparkle {
+      position: absolute;
+      z-index: 30;
+      pointer-events: none;
+      width: 22px; height: 22px;
+      animation: sparkleMove 2s infinite linear;
+      filter: blur(0.3px);
+    }
+    @keyframes sparkleMove {
+      0% { opacity: 0; }
+      20% { opacity: 1; }
+      60% { transform: translateY(20px) scale(1.2);}
+      100% { opacity: 0; transform: translateY(40px) scale(0.9);}
+    }
+    .gemstone {
+      position: absolute;
+      left: 50%; top: 85px;
+      transform: translateX(-50%);
+      width: 48px; height: 48px;
+      z-index: 8;
+      animation: gemShimmer 2.5s infinite alternate;
+    }
+    @keyframes gemShimmer {
+      0% { filter: drop-shadow(0 0 4px #e3be72); }
+      100% { filter: drop-shadow(0 0 16px #fffbe8); }
+    }
+    .scepter {
+      position: absolute;
+      right: 16px; bottom: 80px;
+      width: 40px; height: 100px;
+      z-index: 8;
+      opacity: 0.8;
+      animation: scepterGlint 3.2s infinite alternate;
+    }
+    @keyframes scepterGlint {
+      0% { filter: drop-shadow(0 0 1px #e3be72);}
+      70% { filter: drop-shadow(0 0 16px #fffbe8);}
+      100% { filter: drop-shadow(0 0 1px #e3be72);}
+    }
+    .laurel {
+      position: absolute;
+      left: 50%; bottom: 38px;
+      transform: translateX(-50%);
+      width: 150px; height: 44px;
+      z-index: 6;
+      opacity: 0.7;
+    }
+    .wax-seal {
+      position: absolute; left: 50%; bottom: 36px; transform: translateX(-50%);
+      width: 62px; height: 62px;
+      z-index: 25;
+      pointer-events: none;
+      animation: waxSealPulse 2.4s infinite alternate;
+    }
+    @keyframes waxSealPulse {
+      0% { filter: drop-shadow(0 0 8px #e3be72cc);}
+      100% { filter: drop-shadow(0 0 16px #e3be72cc);}
+    }
+    @media (max-width: 768px) {
+      .invitation-layout {
+        flex-direction: column;
+        align-items: center;
+      }
+      .control-panel {
+        width: 100%;
+        max-width: 400px;
+      }
+      .royal-buttons {
+        flex-direction: column;
+      }
+      .royal-btn {
+        width: 100%;
+      }
+      .main-title {
+        font-size: 2.5em;
+      }
+      .invitation-card { 
+        width: 95vw; 
+        min-width: 300px; 
+      }
+      .card-content { 
+        padding: 80px 20px 28px 20px;
+      }
+      .form-row {
+        flex-direction: column;
+        gap: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-orb"></div>
+  <div class="bg-orb"></div>
+  <div class="bg-orb"></div>
+  <audio id="bgMusic" src="https://cdn.pixabay.com/audio/2022/10/16/audio_12eabf2e0b.mp3" preload="auto"></audio>
+  <div class="royal-container">
+    <header class="royal-header">
+      <svg class="royal-crown" viewBox="0 0 80 60">
+        <defs>
+          <linearGradient id="crownGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#f8e8c8" />
+            <stop offset="50%" stop-color="#d4af37" />
+            <stop offset="100%" stop-color="#a87c2d" />
+          </linearGradient>
+        </defs>
+        <path d="M10,50 L15,25 L25,35 L40,15 L55,35 L65,25 L70,50 Z" fill="url(#crownGradient)" stroke="#a87c2d" stroke-width="2"/>
+        <circle cx="40" cy="15" r="8" fill="#f8e8c8"/>
+        <circle cx="25" cy="35" r="5" fill="#f8e8c8"/>
+        <circle cx="55" cy="35" r="5" fill="#f8e8c8"/>
+        <rect x="8" y="50" width="64" height="8" rx="4" fill="url(#crownGradient)"/>
+      </svg>
+      <h1 class="main-title">Royal Invitation Creator</h1>
+      <p class="subtitle">VVIP Black Card Designer</p>
+    </header>
+    <div class="invitation-layout">
+      <div class="invitation-outer">
+        <div class="invitation-card" id="invitationCard">
+          <svg class="foil-border" viewBox="0 0 370 540">
+            <defs>
+              <linearGradient id="goldenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#fffbe8" />
+                <stop offset="35%" stop-color="#e3be72" />
+                <stop offset="100%" stop-color="#a87c2d" />
+              </linearGradient>
+            </defs>
+            <rect x="5" y="5" width="360" height="530" rx="25" fill="none" stroke="url(#goldenGradient)" stroke-width="4"/>
+            <g>
+              <path d="M30,20 Q18,40 30,60" stroke="url(#goldenGradient)" stroke-width="2.2" fill="none"/>
+              <path d="M340,20 Q352,40 340,60" stroke="url(#goldenGradient)" stroke-width="2.2" fill="none"/>
+              <path d="M30,520 Q18,500 30,480" stroke="url(#goldenGradient)" stroke-width="2.2" fill="none"/>
+              <path d="M340,520 Q352,500 340,480" stroke="url(#goldenGradient)" stroke-width="2.2" fill="none"/>
+            </g>
+            <g opacity="0.23">
+              <ellipse cx="185" cy="270" rx="175" ry="240" fill="none" stroke="url(#goldenGradient)" stroke-width="6"/>
+              <ellipse cx="185" cy="270" rx="135" ry="180" fill="none" stroke="url(#goldenGradient)" stroke-width="2.5"/>
+            </g>
+            <g opacity="0.13">
+              <polygon points="60,60 80,80 60,100 40,80" fill="none" stroke="#fffbe8" stroke-width="1"/>
+              <polygon points="300,60 320,80 300,100 280,80" fill="none" stroke="#fffbe8" stroke-width="1"/>
+              <polygon points="60,440 80,460 60,480 40,460" fill="none" stroke="#fffbe8" stroke-width="1"/>
+              <polygon points="300,440 320,460 300,480 280,460" fill="none" stroke="#fffbe8" stroke-width="1"/>
+            </g>
+          </svg>
+          <div class="black-badge">BLACK CARD</div>
+          <div class="crest-holder">
+            <span class="crest-initials" id="crestInitials">AA</span>
+          </div>
+          <svg class="sparkle" style="top:52px; left:148px;">
+            <circle cx="11" cy="11" r="7" fill="url(#goldenGradient)" opacity="0.9"/>
+          </svg>
+          <svg class="sparkle" style="top:400px; left:300px; animation-delay:1.1s;">
+            <circle cx="11" cy="11" r="5" fill="#fffbe8" opacity="0.65"/>
+          </svg>
+          <svg class="gemstone" viewBox="0 0 48 48">
+            <polygon points="24,4 44,18 38,44 10,44 4,18" fill="#fffbe8"/>
+            <polygon points="24,4 44,18 24,24 4,18" fill="#e3be72"/>
+            <polygon points="24,24 38,44 10,44" fill="#c3a355"/>
+            <circle cx="24" cy="24" r="7" fill="#fffbe8" opacity="0.6"/>
+            <polygon points="24,10 34,18 24,28 14,18" fill="#fffbe8" opacity="0.24"/>
+          </svg>
+          <svg class="scepter" viewBox="0 0 40 100">
+            <rect x="17" y="20" width="6" height="60" rx="2" fill="#e3be72" stroke="#a87c2d" stroke-width="2"/>
+            <ellipse cx="20" cy="20" rx="10" ry="10" fill="#fffbe8" stroke="#e3be72" stroke-width="2"/>
+            <ellipse cx="20" cy="20" rx="5" ry="5" fill="#e3be72"/>
+            <polygon points="20,0 26,12 14,12" fill="#fffbe8"/>
+          </svg>
+          <svg class="laurel" viewBox="0 0 150 44">
+            <path d="M10,42 Q35,34 50,22 Q60,14 75,14 Q90,14 100,22 Q115,34 140,42" fill="none" stroke="#e3be72" stroke-width="4"/>
+            <path d="M25,40 Q40,29 55,18" fill="none" stroke="#fffbe8" stroke-width="2"/>
+            <path d="M125,40 Q110,29 95,18" fill="none" stroke="#fffbe8" stroke-width="2"/>
+          </svg>
+          <svg class="wax-seal" viewBox="0 0 62 62">
+            <ellipse cx="31" cy="31" rx="28" ry="24" fill="#cba75c" stroke="#fffbe8" stroke-width="4" opacity="0.97"/>
+            <text x="50%" y="55%" text-anchor="middle" fill="#fffbe8" font-family="Great Vibes" font-size="21px" dy=".3em">VIP</text>
+          </svg>
+          <div class="qr-frame" id="qrFrame" style="display:none;">
+            <canvas id="qrCanvas" width="50" height="50"></canvas>
+          </div>
+          <div class="card-content">
+            <div class="card-title" id="cardTitle">Farewell</div>
+            <div class="recipient" id="cardRecipient">To: His Excellency, Sheikh Abdul Rahman Al-Faisal</div>
+            <div class="message" id="cardMessage">
+              Your vision and leadership have elevated us all.<br>
+              As you embark on new horizons, may fortune, health, and joy be your constant companions.<br>
+              <br>
+              You depart, but your legacy remains.
+            </div>
+            <div class="event-info" id="eventInfo">
+              <div><strong>Event:</strong> Royal Farewell Gala</div>
+              <div><strong>Date:</strong> Friday, November 22, 2025</div>
+              <div><strong>Time:</strong> 7:00 PM</div>
+              <div><strong>Venue:</strong> The Palace Grand Ballroom</div>
+            </div>
+            <div class="signature" id="cardSignature">With gratitude,<br>HRH Prince Khalid</div>
+          </div>
+        </div>
+        <div style="margin-top:16px; text-align:center;">
+          <button type="button" class="royal-btn btn-primary" id="downloadBtn" style="width:100%;">⬇️ Download as Image</button>
+        </div>
+      </div>
+      <div class="control-panel">
+        <h2 class="panel-title">Royal Designer</h2>
+        <div class="form-group">
+          <label class="form-label">Recipient Name/Title</label>
+          <input id="nameInput" class="form-input" type="text" placeholder="To: His Excellency, Sheikh Abdul Rahman Al-Faisal" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Crest Initials</label>
+          <input id="monogramInput" class="form-input" maxlength="2" placeholder="AA" style="text-transform:uppercase;" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Event Name</label>
+          <input id="eventInput" class="form-input" type="text" placeholder="Royal Farewell Gala" />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Date</label>
+            <input id="dateInput" class="form-input" type="date" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Time</label>
+            <input id="timeInput" class="form-input" type="time" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Venue</label>
+          <input id="venueInput" class="form-input" type="text" placeholder="The Palace Grand Ballroom" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Personal Message</label>
+          <textarea id="msgInput" class="form-textarea" rows="3" placeholder="Your vision and leadership have elevated us all..."></textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Signature</label>
+          <input id="signatureInput" class="form-input" type="text" placeholder="With gratitude, HRH Prince Khalid" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">QR Code (RSVP/URL)</label>
+          <input id="qrInput" class="form-input" type="text" placeholder="https://example.com/rsvp" />
+        </div>
+        <div class="royal-buttons">
+          <button type="button" class="royal-btn btn-primary" onclick="updateCard(this)">
+            ✨ Update Invitation
+          </button>
+          <button type="button" class="royal-btn btn-secondary" onclick="playMusic(this)">
+            🎵 Royal Music
+          </button>
+        </div>
+        <div class="progress-indicator">
+          <div class="progress-text">Customization Progress</div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script>
+    function playMusic(btn) {
+      const audio = document.getElementById('bgMusic');
+      audio.volume = 0.45; 
+      audio.currentTime = 0; 
+      audio.play();
+      setTimeout(() => audio.pause(), 15000); // 15s intro only
+      btn.innerHTML = '🎵 Playing...';
+      btn.style.background = 'linear-gradient(135deg, #d4af37 0%, #f8e8c8 100%)';
+      setTimeout(() => {
+        btn.innerHTML = '🎵 Royal Music';
+        btn.style.background = 'linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)';
+      }, 15000);
+    }
+    function updateQR(val) {
+      if(val && val.trim() !== "") {
+        document.getElementById('qrFrame').style.display = "";
+        new QRious({ 
+          element: document.getElementById('qrCanvas'), 
+          value: val, 
+          size: 50, 
+          background: '#fff9e3', 
+          foreground:'#b08d57', 
+          level:'H' 
+        });
+      } else {
+        document.getElementById('qrFrame').style.display = "none";
+      }
+    }
+    function updateProgress() {
+      const inputs = [
+        document.getElementById('nameInput').value,
+        document.getElementById('eventInput').value,
+        document.getElementById('dateInput').value,
+        document.getElementById('timeInput').value,
+        document.getElementById('venueInput').value,
+        document.getElementById('msgInput').value,
+        document.getElementById('signatureInput').value,
+        document.getElementById('monogramInput').value
+      ];
+      const filled = inputs.filter(val => val && val.trim() !== '').length;
+      const progress = (filled / inputs.length) * 100;
+      document.getElementById('progressFill').style.width = progress + '%';
+    }
+    function updateCard(btn) {
+      const name = document.getElementById('nameInput').value || 'To: His Excellency, Sheikh Abdul Rahman Al-Faisal';
+      const event = document.getElementById('eventInput').value || 'Royal Farewell Gala';
+      const date = document.getElementById('dateInput').valueAsDate;
+      const time = document.getElementById('timeInput').value;
+      const venue = document.getElementById('venueInput').value || 'The Palace Grand Ballroom';
+      const crest = document.getElementById('monogramInput').value || 'AA';
+      const msg = document.getElementById('msgInput').value || 'Your vision and leadership have elevated us all.<br>As you embark on new horizons, may fortune, health, and joy be your constant companions.<br><br>You depart, but your legacy remains.';
+      const sig = document.getElementById('signatureInput').value || 'With gratitude,<br>HRH Prince Khalid';
+      const qr = document.getElementById('qrInput').value;
+      document.getElementById('crestInitials').textContent = crest.toUpperCase();
+      document.getElementById('cardRecipient').textContent = name;
+      document.getElementById('eventInfo').innerHTML = `
+        <div><strong>Event:</strong> ${event}</div>
+        <div><strong>Date:</strong> ${date ? date.toLocaleDateString('en-US', {
+          weekday: 'long',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        }) : 'Friday, November 22, 2025'}</div>
+        <div><strong>Time:</strong> ${time ? (new Date("2000-01-01T" + time)).toLocaleTimeString('en-US', {
+          hour: 'numeric',
+          minute: '2-digit',
+          hour12: true
+        }) : '7:00 PM'}</div>
+        <div><strong>Venue:</strong> ${venue}</div>
+      `;
+      document.getElementById('cardMessage').innerHTML = msg.replace(/\n/g, '<br>');
+      document.getElementById('cardSignature').innerHTML = sig;
+      updateQR(qr);
+      updateProgress();
+      if(btn) {
+        btn.innerHTML = '✨ Updated!';
+        btn.style.background = 'linear-gradient(135deg, #28a745 0%, #20c997 100%)';
+        setTimeout(() => {
+          btn.innerHTML = '✨ Update Invitation';
+          btn.style.background = 'linear-gradient(135deg, #d4af37 0%, #f8e8c8 50%, #d4af37 100%)';
+        }, 2000);
+      }
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      const inputs = document.querySelectorAll('.form-input, .form-textarea');
+      inputs.forEach(input => {
+        input.addEventListener('input', updateProgress);
+        input.addEventListener('change', updateProgress);
+      });
+      updateCard();
+      updateProgress();
+      document.getElementById('downloadBtn').addEventListener('click', function() {
+        this.style.visibility = 'hidden';
+        setTimeout(() => {
+          html2canvas(document.getElementById('invitationCard'), {
+            backgroundColor: null,
+            scale: 2
+          }).then(canvas => {
+            document.getElementById('downloadBtn').style.visibility = 'visible';
+            const link = document.createElement('a');
+            link.download = 'royal-invitation.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+          });
+        }, 300);
+      });
+    });
+    let autoSaveTimeout;
+    function autoSave() {
+      clearTimeout(autoSaveTimeout);
+      autoSaveTimeout = setTimeout(() => {
+        updateCard();
+      }, 1000);
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      const inputs = document.querySelectorAll('.form-input, .form-textarea');
+      inputs.forEach(input => {
+        input.addEventListener('input', autoSave);
+      });
+    });
+  </script>
+</body>
+</html>
